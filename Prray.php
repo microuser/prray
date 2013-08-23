@@ -77,7 +77,7 @@ public function add($array){
     $this->append($array);    
   }
   elseif($mode=='structure'){
-    //??
+    //??// valuekeys ???
   }
 }
 
