@@ -42,12 +42,21 @@ $this->mode=$arrayMode;
 *prepends passed elements to the front of the array. Note that the list of elements is prepended as a whole, so that the prepended elements stay in the same order. All numerical array keys will be modified to start counting from zero while literal keys won't be touched.
 */
 public function prepend($arrayOrValue){
+  if($mode=='keyvalue'){
   return array_unshift($this->collection,$arrayOrValue);
+  }elseif($mode==''){
+    //??
+  }
+  
 }
 
 public function append($arrayOrValue){
-  foreach ($array as $row){
-    $this->collection[] = $row;
+  if($mode=='keyvalue'){
+    foreach ($array as $row){
+      $this->collection[] = $row;
+    }
+  }elseif($mode==''){
+    //??
   }
 }
 
@@ -62,6 +71,8 @@ public function add($array){
     foreach($array as $key => $row){
       $this->collection[$key] = $row;
     }
+  }elseif($mode==''){
+    //??
   }
 
 
