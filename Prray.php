@@ -77,11 +77,43 @@ public function add($array){
     $this->append($array);    
   }
   elseif($mode=='structure'){
-    //??// valuekeys ???
+    //??// valuekeys ??? aka key value pair
+  }elseif($mode=='associative'){
+    //??//
+  }elseif($mode=='flat'){
+    
   }
+  
 }
 
 }//end function add
+
+public function convert($fromMode,$toMode,array $fromArray){
+  $toArray = array();
+  if($fromMode==''&&$toMode==''){
+    
+  }elseif($fromMode==''&&$toMode==''){
+    
+  }elseif($fromMode==''&&$toMode==''){
+    
+  }elseif($fromMode==''&&$toMode==''){
+    
+  }
+
+  return $toArray;
+}
+
+/*
+* truncates the key while converting from key value array to key array.
+*/
+public function convertKeyValue2Value($keyValueArray){
+  $valueArray = array();
+  foreach($keyValueArray as $value){
+    $valueArray[] = $value;
+  }
+  return $valueArray
+}
+
   
 }
 
