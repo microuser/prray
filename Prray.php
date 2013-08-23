@@ -43,11 +43,11 @@ public function setPrivateKey($privateKey='ID'){
 public function setForeignKey($privateKey='ID'){
   $this->foreignKey=$foreignKey;
 }
-public function setPrivateTable($table){
+public function setPrivateTable($privateTable){
   $this->privateTable=$privateTable;
 }
-public function setForeignTable($table){
-  $this->foreignTable
+public function setForeignTable($foreignTable){
+  $this->foreignTable=$foreignTable;
 }
 
 
