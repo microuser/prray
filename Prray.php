@@ -67,14 +67,19 @@ public function append($arrayOrValue){
 *
 **/
 public function add($array){
-  if($mode=='keyvalue'){
+  
+  if($mode=='keyvalue') {
     foreach($array as $key => $row){
       $this->collection[$key] = $row;
     }
-  }elseif($mode==''){
+  }
+  elseif($mode=='value') {
+    $this->append($array);    
+  }
+  elseif($mode=='structure'){
     //??
   }
-
+}
 
 }//end function add
   
