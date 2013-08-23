@@ -3,10 +3,11 @@
 /*
 * prray class has array data conversion and collections capabilities. An array is an ordered map which associates values to keys. It can be used as a vector, linked list, trees and multidemensional arrayes.
 * The key must consist of an inter or a string. A (float)1.5 will be truncated to integer 1.
-
+* A new structure is to be presented which I call a 'pivot structure'. The advantage is to be able to create a view of merged information contained on two seaparate table sets using a key.
 * @author microuser
-* @copyright MIT-2
+* @copyright 2013 microuser
 * @version 0.01a
+* @license MIT-2
 *
 * <pre>
 * Useage:
@@ -31,6 +32,24 @@ class Prray {
 */
 private $collection;
 private $mode;
+private $privateKey;
+private $privateTable;
+private $forignKey;
+private $foreignTable;
+
+public function setPrivateKey($privateKey='ID'){
+  $this->privateKey=$privateKey;
+}
+public function setForeignKey($privateKey='ID'){
+  $this->foreignKey=$foreignKey;
+}
+public function setPrivateTable($table){
+  $this->privateTable=$privateTable;
+}
+public function setForeignTable($table){
+  $this->foreignTable
+}
+
 
 public function __construct($arrayMode='KeyValue'){
 $this->collection = array();
@@ -76,7 +95,7 @@ public function add($array){
   elseif($mode=='value') {
     $this->append($array);    
   }
-  elseif($mode=='structure'){
+  elseif($mode=='dataset'){
     //??// valuekeys ??? aka key value pair
   }elseif($mode=='associative'){
     //??//
@@ -90,7 +109,7 @@ public function add($array){
 
 public function convert($fromMode,$toMode,array $fromArray){
   $toArray = array();
-  if($fromMode==''&&$toMode==''){
+  if($fromMode=='keyvalue'&&$toMode=='value'){
     
   }elseif($fromMode==''&&$toMode==''){
     
